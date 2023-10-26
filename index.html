@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome CDN -->
+
+    <style>
+        .hero-main {
+            font-size: 25px;
+        }
+
+        .hero-secondary {
+            font-size: 13.5 !important;
+        }
+
+        .section-2-img {
+            margin: auto;
+        }
+
+        .over-img-text {
+            margin: auto;
+            width: 90%;
+        }
+
+        .over-three-columns {
+            width: 90%;
+        }
+
+        .over-image-section {
+            position: relative;
+        }
+
+        #myVideo {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        #sidebarContent {
+            transform: translateX(100%);
+            transition: 0.25s ease;
+        }
+
+        #sidebarContent.show {
+            transform: translateX(0%);
+        }
+
+        @media (min-width: 992px) {
+            .hero-main {
+                font-size: 45px;
+            }
+
+            .hero-secondary {
+                font-size: 16px !important;
+            }
+
+            .section-2-img {
+                margin: 0px;
+            }
+
+            .over-img-text {
+                margin: 0px 0px 0px 50%;
+                width: 35%;
+            }
+
+            .over-three-columns {
+                width: 50%;
+            }
+
+            .over-image-section {
+                position: absolute;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: fixed; z-index: 50; box-shadow: 0px 0px 15px rgba(0,0,0,0.1);" id="navbar"
+        class="d-flex justify-content-between align-items-center w-100 bg-danger-subtle">
+        <div class="d-flex align-items-center gap-5">
+            <img src="./logo.png" width="75px" alt="logo">
+            <ul class="gap-4 fw-bolder d-none d-lg-flex m-0 p-0" style="list-style: none;">
+                <li><a class="text-decoration-none text-black" href="/index.html">Home</a></li>
+                <li><a class="text-decoration-none text-black" href="./about.html">About</a></li>
+                <li><a class="text-decoration-none text-black" href="./for_tenants.html">For Tenants</a></li>
+                <li><a class="text-decoration-none text-black" href="./for_landlords.html">For Landlords</a></li>
+                <li><a class="text-decoration-none text-black" href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <a class=" d-none d-lg-flex align-items-center gap-3 px-5 text-decoration-none text-black" href="#">
+            <span style="aspect-ratio: 1;"
+                class="d-flex justify-content-center align-items-center p-3 rounded-pill bg-black text-white"><i
+                    class="fa-regular fa-calendar-days"></i></span>
+            <span class="fw-bold">Book a viewing now</span>
+        </a>
+
+        <div class="d-block d-lg-none p-3">
+            <svg style="cursor: pointer;" onclick="toggleSidebar()" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 50 50" width="17.5px" height="17.5px">
+                <path
+                    d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z" />
+            </svg>
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center p-5" style="height: 100vh; width: 100vw; overflow: hidden;">
+        <video autoplay
+            muted loop id="myVideo">
+            <source src="./Homepage_Video.m4v" type="video/mp4">
+        </video>
+        <div class="container-fluid" style="position: relative; z-index: 2;">
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <h1 class="text-white hero-main fw-bolder">
+                        Unlocking the Door to Seamless Property Management Where Your Investment Meets Excellence
+                    </h1>
+                    <p class="text-white hero-secondary">Elevating co-house shares for professionals, with 200 plus
+                        properties nationwide under our expert management.</p>
+                    <button class="btn btn-outline-light">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="position-relative my-5">
+        <img class="section-2-img" style="width: 55%; aspect-ratio: 16/9; display: block;"
+            src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="">
+        <div class="over-image-section d-flex flex-column align-items-center justify-content-center w-100"
+            style="inset: 0px 0px -25%">
+            <div class="p-5 bg-danger-subtle over-img-text">
+                <h1 class="text-black hero-main fw-bolder mb-4">
+                    Let's find the perfect home for you
+                </h1>
+                <div class="px-4 py-3 btn btn-danger rounded-0">Learn More</div>
+            </div>
+            <div class="d-flex align-items-start bg-danger p-3 gap-3 mx-auto over-three-columns">
+                <div style="width: calc(100%/3);" class="d-flex flex-column justify-content-center align-items-center">
+                    <span style="aspect-ratio: 1;"
+                        class="d-flex justify-content-center align-items-center p-3 rounded-pill bg-white text-danger mb-3">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                    <span class="text-white fw-bolder text-center">Great Locations</span>
+                </div>
+                <div style="width: calc(100%/3);" class="d-flex flex-column justify-content-center align-items-center">
+                    <span style="aspect-ratio: 1;"
+                        class="d-flex justify-content-center align-items-center p-3 rounded-pill bg-white text-danger mb-3">
+                        <i class="fa-solid fa-money-bill"></i>
+                    </span>
+                    <span class="text-white fw-bolder text-center">Bills Included with Rent </span>
+                </div>
+                <div style="width: calc(100%/3);" class="d-flex flex-column justify-content-center align-items-center">
+                    <span style="aspect-ratio: 1;"
+                        class="d-flex justify-content-center align-items-center p-3 rounded-pill bg-white text-danger mb-3">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </span>
+                    <span class="text-white fw-bolder text-center">Professional and Sociable Housemates</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5 py-5">
+        <div class="row align-items-center py-5">
+            <div class="col-12 col-lg-6">
+                <h2 class="text-danger" style="font-size: 50px;"><i>Our Services</i></h2>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <h4 class="fw-bolder text-danger">Zero Deposit Scheme</h4>
+                            <p>Say goodbye to heffy deposits with our Zero Deposit Scheme, giving tenants peace of mind
+                                and financial flexibility</p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h4 class="fw-bolder text-danger">No Utilities</h4>
+                            <p>Enjoy hass;e-free living with our all-inclusive rental, where utilities are icluded in
+                                the price</p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h4 class="fw-bolder text-danger">Express Move-In</h4>
+                            <p>View today, move in within 48 hours, making your new home a reality</p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h4 class="fw-bolder text-danger">Swift Care</h4>
+                            <p>We're just one call away, ensuring all your maintenance needs are resolved promptly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-danger-subtle p-5">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <p style="font-size: 30px;">380 Nottingham Rd, Nottingham NG7 7FE, United Kingdom</p>
+                <div class="d-flex align-items-center gap-3 mb-2">
+                    <a style="aspect-ratio: 1;"
+                        class="d-flex justify-content-center align-items-center p-3 rounded-pill bg-danger text-white">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a style="aspect-ratio: 1;"
+                        class="d-flex justify-content-center align-items-center p-3 rounded-pill bg-danger text-white">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a style="aspect-ratio: 1;"
+                        class="d-flex justify-content-center align-items-center p-3 rounded-pill bg-danger text-white">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a style="aspect-ratio: 1;"
+                        class="d-flex justify-content-center align-items-center p-3 rounded-pill bg-danger text-white">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+                <span>hello@mygroovydomain.com</span>
+            </div>
+        </div>
+    </div>
+    <div id="sidebarContent" class="bg-white d-block d-lg-none"
+        style="position: fixed; width: 300px; z-index: 100; inset: 0px 0px 0px auto;">
+        <div class="d-flex justify-content-end p-3">
+            <svg style="cursor: pointer;" onclick="toggleSidebar()" xmlns="http://www.w3.org/2000/svg" width="20px"
+                height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </div>
+        <ul class="gap-4 fw-bolder m-0 p-3" style="list-style: none;">
+            <li class="mb-2"><a class="text-decoration-none text-black" href="/index.html">Home</a></li>
+            <li class="mb-2"><a class="text-decoration-none text-black" href="./about.html">About</a></li>
+            <li class="mb-2"><a class="text-decoration-none text-black" href="./for_tenants.html">For Tenants</a></li>
+            <li class="mb-2"><a class="text-decoration-none text-black" href="./for_landlords.html">For Landlords</a>
+            </li>
+            <li class="mb-2"><a class="text-decoration-none text-black" href="./contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script>
+        const navbar = document.getElementById("navbar")
+        window.addEventListener("scroll", function (event) {
+            console.log({ event })
+        })
+
+        function toggleSidebar() {
+            const sidebarContent = document.getElementById("sidebarContent")
+            const classLists = [...sidebarContent.classList]
+
+            classLists.includes("show") ? sidebarContent.classList.remove("show") : sidebarContent.classList.add("show")
+        }
+    </script>
+</body>
+
+</html>
